@@ -1,0 +1,4 @@
+[submodule "src/enjoy.cqrs"]
+	path = src/enjoy.cqrs
+	url = https://github.com/ircnelson/enjoy.cqrs.git
+	branch = dev
