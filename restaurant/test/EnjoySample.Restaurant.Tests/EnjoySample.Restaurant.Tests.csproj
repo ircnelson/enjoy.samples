@@ -33,6 +33,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EnjoyCQRS.Bus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.Bus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EnjoyCQRS.Commands, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.Commands.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EnjoyCQRS.Events, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.Events.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EnjoyCQRS.EventStore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.EventStore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EnjoyCQRS.TestFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.TestFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FluentAssertions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\FluentAssertions.4.5.0\lib\net45\FluentAssertions.dll</HintPath>
       <Private>True</Private>
@@ -42,7 +62,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -102,22 +122,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\enjoy.cqrs\src\EnjoyCQRS.Commands\EnjoyCQRS.Commands.csproj">
-      <Project>{D210D6B3-0DAA-4CB1-A65E-D7DF9A42B0A6}</Project>
-      <Name>EnjoyCQRS.Commands</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\src\enjoy.cqrs\src\EnjoyCQRS.EventStore\EnjoyCQRS.EventStore.csproj">
-      <Project>{57850692-5F07-43AF-881A-BEFA95791CD0}</Project>
-      <Name>EnjoyCQRS.EventStore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\src\enjoy.cqrs\src\EnjoyCQRS.Events\EnjoyCQRS.Events.csproj">
-      <Project>{5512AF07-A3BB-4A41-A0B4-28C930C57145}</Project>
-      <Name>EnjoyCQRS.Events</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\src\enjoy.cqrs\src\EnjoyCQRS.TestFramework\EnjoyCQRS.TestFramework.csproj">
-      <Project>{B1060653-D6FB-4AB1-880F-8E773544EDCE}</Project>
-      <Name>EnjoyCQRS.TestFramework</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\EnjoySample.Restaurant.CommandsHandlers\EnjoySample.Restaurant.CommandsHandlers.csproj">
       <Project>{97957F1A-482B-461A-AF61-F4CE05E52C21}</Project>
       <Name>EnjoySample.Restaurant.CommandsHandlers</Name>

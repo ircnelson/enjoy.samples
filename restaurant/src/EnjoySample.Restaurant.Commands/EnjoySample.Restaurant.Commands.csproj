@@ -30,6 +30,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EnjoyCQRS.Bus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.Bus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EnjoyCQRS.Commands, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.Commands.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EnjoyCQRS.Events, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.Events.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EnjoyCQRS.EventStore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.EventStore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EnjoyCQRS.TestFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.TestFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,22 +73,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\enjoy.cqrs\src\EnjoyCQRS.Commands\EnjoyCQRS.Commands.csproj">
-      <Project>{D210D6B3-0DAA-4CB1-A65E-D7DF9A42B0A6}</Project>
-      <Name>EnjoyCQRS.Commands</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\MyCQRS.Commands\MyCQRS.Commands.csproj">
       <Project>{F75361EB-8636-4A22-977B-CE3A7745FB3D}</Project>
       <Name>MyCQRS.Commands</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\src\enjoy.cqrs\src\EnjoyCQRS.EventStore\EnjoyCQRS.EventStore.csproj">
-      <Project>{57850692-5F07-43AF-881A-BEFA95791CD0}</Project>
-      <Name>EnjoyCQRS.EventStore</Name>
     </ProjectReference>
     <ProjectReference Include="..\EnjoySample.Restaurant.Domain\EnjoySample.Restaurant.Domain.csproj">
       <Project>{F78CF8EE-C3E8-416B-86C1-76402A504202}</Project>
       <Name>EnjoySample.Restaurant.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
