@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
 using EnjoyCQRS.Events;
-using EnjoySample.Restaurant.Events;
+using EnjoySample.Restaurant.Domain.Tab;
 using EnjoySample.Restaurant.Read;
 using EnjoySample.Restaurant.Read.Models;
 
@@ -15,11 +16,13 @@ namespace EnjoySample.Restaurant.EventsHandlers
             _repository = repository;
         }
 
-        public void Execute(FoodOrderedEvent theEvent)
+        public Task ExecuteAsync(FoodOrderedEvent theEvent)
         {
             var orderItemModel = new OrderItemModel(Guid.NewGuid(), theEvent.AggregateId, theEvent.MenuNumber, theEvent.Price, theEvent.Status);
 
             _repository.Insert(orderItemModel);
+
+            return Task.CompletedTask;
         }
     }
 }

@@ -4,10 +4,9 @@ using System.Linq;
 using EnjoyCQRS.Events;
 using EnjoyCQRS.TestFramework;
 using EnjoySample.Restaurant.Commands;
-using EnjoySample.Restaurant.CommandsHandlers;
 using EnjoySample.Restaurant.Domain;
+using EnjoySample.Restaurant.Domain.Tab;
 using EnjoySample.Restaurant.Domain.ValueObjects;
-using EnjoySample.Restaurant.Events;
 using FluentAssertions;
 using Xunit;
 

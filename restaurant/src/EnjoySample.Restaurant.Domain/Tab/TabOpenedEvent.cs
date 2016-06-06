@@ -1,7 +1,7 @@
 ﻿using System;
 using EnjoyCQRS.Events;
 
-namespace EnjoySample.Restaurant.Events
+namespace EnjoySample.Restaurant.Domain.Tab
 {
     [Serializable]
     public class TabOpenedEvent : DomainEvent

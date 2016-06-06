@@ -33,24 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EnjoyCQRS.Bus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.Bus.dll</HintPath>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EnjoyCQRS.Commands, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.Commands.dll</HintPath>
+    <Reference Include="EnjoyCQRS, Version=1.0.94.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.94\lib\net461\EnjoyCQRS.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EnjoyCQRS.Events, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.Events.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EnjoyCQRS.EventStore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.EventStore.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EnjoyCQRS.TestFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.TestFramework.dll</HintPath>
+    <Reference Include="EnjoyCQRS.TestFramework, Version=1.0.94.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EnjoyCQRS.TestFramework.1.0.94\lib\net461\EnjoyCQRS.TestFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FluentAssertions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
@@ -61,14 +53,13 @@
       <HintPath>..\..\..\packages\FluentAssertions.4.5.0\lib\net45\FluentAssertions.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\Moq.dll</HintPath>
+    <Reference Include="Moq, Version=4.5.8.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Moq.4.5.8\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
@@ -119,13 +110,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\EnjoySample.Restaurant.CommandsHandlers\EnjoySample.Restaurant.CommandsHandlers.csproj">
-      <Project>{97957F1A-482B-461A-AF61-F4CE05E52C21}</Project>
-      <Name>EnjoySample.Restaurant.CommandsHandlers</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\EnjoySample.Restaurant.Commands\EnjoySample.Restaurant.Commands.csproj">
       <Project>{88AD5CD0-417D-46E8-B832-264D6AB57CF3}</Project>
       <Name>EnjoySample.Restaurant.Commands</Name>
@@ -137,10 +125,6 @@
     <ProjectReference Include="..\..\src\EnjoySample.Restaurant.EventsHandlers\EnjoySample.Restaurant.EventsHandlers.csproj">
       <Project>{732B0326-680B-499F-9BAA-E5FBA9A90F4D}</Project>
       <Name>EnjoySample.Restaurant.EventsHandlers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\EnjoySample.Restaurant.Events\EnjoySample.Restaurant.Events.csproj">
-      <Project>{CC658FB3-8A5D-41C5-BDBC-B7DA359C827B}</Project>
-      <Name>EnjoySample.Restaurant.Events</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\EnjoySample.Restaurant.Read\EnjoySample.Restaurant.Read.csproj">
       <Project>{C6B96D03-8CBE-4132-BD75-FF1B7E174273}</Project>

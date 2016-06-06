@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using EnjoyCQRS.TestFramework;
+using EnjoySample.Restaurant.Domain.Tab;
 using EnjoySample.Restaurant.Domain.ValueObjects;
-using EnjoySample.Restaurant.Events;
 using EnjoySample.Restaurant.EventsHandlers;
 using EnjoySample.Restaurant.Read;
 using EnjoySample.Restaurant.Read.Models;

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using EnjoyCQRS.EventStore;
+using EnjoyCQRS.EventSource;
 using EnjoySample.Restaurant.Domain.Exceptions;
 using EnjoySample.Restaurant.Domain.ValueObjects;
-using EnjoySample.Restaurant.Events;
 
-namespace EnjoySample.Restaurant.Domain
+namespace EnjoySample.Restaurant.Domain.Tab
 {
     public class TabAggregate : Aggregate
     {
@@ -20,12 +19,11 @@ namespace EnjoySample.Restaurant.Domain
 
         public TabAggregate()
         {
-            RegisterEvents();
         }
 
         private TabAggregate(int tableNumber, string waiter) : this()
         {
-            Raise(new TabOpenedEvent(Guid.NewGuid(), tableNumber, waiter));
+            Emit(new TabOpenedEvent(Guid.NewGuid(), tableNumber, waiter));
         }
         public static TabAggregate Create(int tableNumber, string waiter)
         {
@@ -42,7 +40,7 @@ namespace EnjoySample.Restaurant.Domain
             {
                 foreach (var orderedItem in drinks)
                 {
-                    Raise(new DrinksOrderedEvent(Id, orderedItem.Description, orderedItem.MenuNumber, orderedItem.Price, orderedItem.Status.ToString()));
+                    Emit(new DrinksOrderedEvent(Id, orderedItem.Description, orderedItem.MenuNumber, orderedItem.Price, orderedItem.Status.ToString()));
                 }
 
             }
@@ -51,8 +49,8 @@ namespace EnjoySample.Restaurant.Domain
             if (foods.Any())
             {
                 foreach (var orderedItem in foods)
-                {                   
-                    Raise(new FoodOrderedEvent(Id, orderedItem.Description, orderedItem.MenuNumber, orderedItem.Price, orderedItem.Status.ToString()));
+                {
+                    Emit(new FoodOrderedEvent(Id, orderedItem.Description, orderedItem.MenuNumber, orderedItem.Price, orderedItem.Status.ToString()));
                 }
             }
         }
@@ -61,7 +59,7 @@ namespace EnjoySample.Restaurant.Domain
             if (!AreDrinksOutstanding(menuNumbers))
                 throw new DrinksNotOutstanding();
 
-            Raise(new DrinksServedEvent(Id, menuNumbers));
+            Emit(new DrinksServedEvent(Id, menuNumbers));
         }
 
         public void MarkFoodPrepared(IEnumerable<int> menuNumbers)
@@ -69,7 +67,7 @@ namespace EnjoySample.Restaurant.Domain
             if (!IsFoodOutstanding(menuNumbers))
                 throw new FoodNotOutstanding();
 
-            Raise(new FoodPreparedEvent(Id, menuNumbers));
+            Emit(new FoodPreparedEvent(Id, menuNumbers));
         }
 
         public void MarkFoodServed(IEnumerable<int> menuNumbers)
@@ -77,7 +75,7 @@ namespace EnjoySample.Restaurant.Domain
             if (!IsFoodPrepared(menuNumbers))
                 throw new FoodNotPrepared();
 
-            Raise(new FoodServedEvent(Id, menuNumbers));
+            Emit(new FoodServedEvent(Id, menuNumbers));
         }
 
         public void CloseTab(decimal amountPaid)
@@ -92,7 +90,7 @@ namespace EnjoySample.Restaurant.Domain
             var ordersValue = _servedItemsValue;
             var tipValue = amountPaid - _servedItemsValue;
 
-            Raise(new TabClosedEvent(Id, TableNumber, amountPaid, ordersValue, tipValue));
+            Emit(new TabClosedEvent(Id, TableNumber, amountPaid, ordersValue, tipValue));
         }
 
         private bool HasUnservedItems()
@@ -126,15 +124,15 @@ namespace EnjoySample.Restaurant.Domain
             return true;
         }
 
-        private void RegisterEvents()
+        protected override void RegisterEvents()
         {
-            On<TabOpenedEvent>(OnNewTabOpened);
-            On<DrinksOrderedEvent>(OnNewDrinksOrdered);
-            On<FoodOrderedEvent>(OnNewFoodsOrdered);
-            On<DrinksServedEvent>(OnNewDrinksServed);
-            On<FoodPreparedEvent>(OnNewFoodPrepared);
-            On<FoodServedEvent>(OnNewFoodServed);
-            On<TabClosedEvent>(OnTabClosed);
+            SubscribeTo<TabOpenedEvent>(OnNewTabOpened);
+            SubscribeTo<DrinksOrderedEvent>(OnNewDrinksOrdered);
+            SubscribeTo<FoodOrderedEvent>(OnNewFoodsOrdered);
+            SubscribeTo<DrinksServedEvent>(OnNewDrinksServed);
+            SubscribeTo<FoodPreparedEvent>(OnNewFoodPrepared);
+            SubscribeTo<FoodServedEvent>(OnNewFoodServed);
+            SubscribeTo<TabClosedEvent>(OnTabClosed);
         }
 
         private void OnTabClosed(TabClosedEvent obj)

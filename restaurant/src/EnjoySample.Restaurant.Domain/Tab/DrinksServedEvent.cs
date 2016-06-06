@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using EnjoyCQRS.Events;
 
-namespace EnjoySample.Restaurant.Events
+namespace EnjoySample.Restaurant.Domain.Tab
 {
     [Serializable]
     public class DrinksServedEvent : DomainEvent

@@ -30,34 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EnjoyCQRS.Bus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.Bus.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EnjoyCQRS.Commands, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.Commands.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EnjoyCQRS.Events, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.Events.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EnjoyCQRS.EventStore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.EventStore.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EnjoyCQRS.TestFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\EnjoyCQRS.TestFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.25\lib\net461\src\EnjoyCQRS.TestFramework\bin\Debug\Moq.dll</HintPath>
+    <Reference Include="EnjoyCQRS, Version=1.0.94.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EnjoyCQRS.1.0.94\lib\net461\EnjoyCQRS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
@@ -74,9 +53,9 @@
     <Compile Include="TabOpenedEventHandler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EnjoySample.Restaurant.Events\EnjoySample.Restaurant.Events.csproj">
-      <Project>{CC658FB3-8A5D-41C5-BDBC-B7DA359C827B}</Project>
-      <Name>EnjoySample.Restaurant.Events</Name>
+    <ProjectReference Include="..\EnjoySample.Restaurant.Domain\EnjoySample.Restaurant.Domain.csproj">
+      <Project>{f78cf8ee-c3e8-416b-86c1-76402a504202}</Project>
+      <Name>EnjoySample.Restaurant.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\EnjoySample.Restaurant.Read\EnjoySample.Restaurant.Read.csproj">
       <Project>{C6B96D03-8CBE-4132-BD75-FF1B7E174273}</Project>

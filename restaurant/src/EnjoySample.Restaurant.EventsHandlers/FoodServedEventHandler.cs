@@ -1,6 +1,7 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using EnjoyCQRS.Events;
-using EnjoySample.Restaurant.Events;
+using EnjoySample.Restaurant.Domain.Tab;
 using EnjoySample.Restaurant.Read;
 using EnjoySample.Restaurant.Read.Models;
 
@@ -15,7 +16,7 @@ namespace EnjoySample.Restaurant.EventsHandlers
             _repository = repository;
         }
 
-        public void Execute(FoodServedEvent theEvent)
+        public Task ExecuteAsync(FoodServedEvent theEvent)
         {
             var tab = _repository.GetById(theEvent.AggregateId);
 
@@ -32,6 +33,8 @@ namespace EnjoySample.Restaurant.EventsHandlers
             }
 
             _repository.Update(tab);
+
+            return Task.CompletedTask;
         }
     }
 }

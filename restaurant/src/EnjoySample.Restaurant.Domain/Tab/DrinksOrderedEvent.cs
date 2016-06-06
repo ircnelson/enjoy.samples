@@ -1,17 +1,17 @@
 ﻿using System;
 using EnjoyCQRS.Events;
 
-namespace EnjoySample.Restaurant.Events
+namespace EnjoySample.Restaurant.Domain.Tab
 {
     [Serializable]
-    public class FoodOrderedEvent : DomainEvent
+    public class DrinksOrderedEvent : DomainEvent
     {
         public string Description { get; }
         public int MenuNumber { get; }
         public decimal Price { get; }
         public string Status { get; }
 
-        public FoodOrderedEvent(Guid aggregateId, string description, int menuNumber, decimal price, string status) : base(aggregateId)
+        public DrinksOrderedEvent(Guid aggregateId, string description, int menuNumber, decimal price, string status) : base(aggregateId)
         {
             Description = description;
             MenuNumber = menuNumber;

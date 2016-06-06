@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using EnjoyCQRS.TestFramework;
 using EnjoySample.Restaurant.Commands;
-using EnjoySample.Restaurant.CommandsHandlers;
 using EnjoySample.Restaurant.Domain;
 using EnjoySample.Restaurant.Domain.Exceptions;
+using EnjoySample.Restaurant.Domain.Tab;
 using EnjoySample.Restaurant.Domain.ValueObjects;
 using Xunit;
 
